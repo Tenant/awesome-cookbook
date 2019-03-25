@@ -1,23 +1,19 @@
-# Git
+## Git
 
-**Transfer codes from ==GitLab== to==GitHub==**:
+### 1. Initialize Repo
 
-- create an empty repo on GitHub
+**Transfer codes from `GitLab` to `GitHub`**:
 
   ```c++
-  git remote add githubhttps://yourLogin@github.com/yourLogin/yourRepoName.git
   git push --mirror github
   ```
 
+### 2. Tracking Files
 
-
-**Convert remote's URL from `https` to `ssh`**:
+**Undo modifications**
 
 ```bash
-# To check if remote's URL is ssh or https
-git remote -v
-# To switch from https to ssh
-git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+git checkout @ -- [filename]
 ```
 
 
@@ -27,8 +23,6 @@ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 ```bash
 git rm --cached [filename]
 ```
-
-
 
 **Reset `git add` operations**:
 
@@ -50,8 +44,6 @@ git reset <commit>
 git reset --hard <commit>
 ```
 
-
-
 **Clean files**:
 
 ```bash
@@ -62,8 +54,6 @@ git clean -n
 git clean -f
 ```
 
-
-
 **Append changes to last commit**:
 
 ```bash
@@ -71,13 +61,11 @@ git commit --amend
 ```
 
 
-
 **Display `commits` concerned with the specific file**:
 
 ```bash
 git log -- <file>
 ```
-
 
 
 **Git diff**:
@@ -88,6 +76,43 @@ git diff HEAD
 
 # show difference between changes and last commit
 git diff --cached
+```
+
+
+### 3. Remote
+
+**Convert remote's URL from `https` to `ssh`**:
+
+```bash
+git remote -v
+
+git remote add github [url]
+
+git remote set-url origin [url]
+```
+
+
+
+### 4. Branch
+
+```bash
+git branch [new-branch-name]
+
+git branch
+
+git checkout [target-branch-name]
+
+git merge [source-branch-name]
+
+git branch --all
+
+git push origin [local-branch]:[remote-branch]
+
+git push origin :[remote-branch]
+
+git branch -d [branch-name]
+
+git remote set-head origin [branch-new]
 ```
 
 
