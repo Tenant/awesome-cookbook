@@ -30,3 +30,21 @@
 
 [C++ STL 教程](http://www.runoob.com/cplusplus/cpp-stl-tutorial.html)
 
+
+
+**File**
+
+[fscanf格式详解](https://blog.csdn.net/q_l_s/article/details/22572777)
+
+```c++
+FILE *fp;
+
+while(true){
+    int cnt = fscanf(fp, "%*d %*f %*f %lf %lf %lf %*[^\n]",yaw,gx,gy);
+    if(cnt < 3){
+        break;
+    }
+}
+fclose(fp);
+```
+
