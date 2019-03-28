@@ -51,7 +51,7 @@ git reset --hard <commit>
 git clean -n
 
 # Execute the clean
-git clean -f
+git clean -df
 ```
 
 **Append changes to last commit**:
