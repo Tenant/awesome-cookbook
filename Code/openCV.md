@@ -25,3 +25,10 @@ src.copyTo(dst_roi);
 
 
 ### 2. Python
+
+**Install OpenCV-Python**
+
+```bash
+pip install opencv_python
+```
+
