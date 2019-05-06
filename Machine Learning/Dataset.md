@@ -1,14 +1,12 @@
 # Dataset
 
-[Large scale visual recognition challenge(ILSVRC)](http://image-net.org/challenges/LSVRC/)
 
 [The UA-DETRAC Benchmark](https://detrac-db.rit.albany.edu/Tracking)
 
 [NVIDIA AI CITY](https://www.aicitychallenge.org/)
 
-## Object Detection
 
-[CIFAR10 & 100](https://www.cs.toronto.edu/~kriz/cifar.html)
+
 
 
 
@@ -17,12 +15,6 @@
 [CamVid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)
 
 CamVid是最早的第一用于自动驾驶领域的语义分割数据集，发布于2007年末。他们应用自己的图像标注软件在一段10分钟的视频中连续标注了700张图片，这些视频是由安装在汽车仪表盘的摄像机拍摄的，拍摄视角和司机的视角基本一致。
-
-
-
-[KITTI](http://www.cvlibs.net/datasets/kitti/)
-
-KITTI数据集发布于2012年，但是他们起初不标注好的语义分割图像，而是后来由另外的团队标注而成。然而这个数据集没有包括对[道路的标注](http://www.cvlibs.net/datasets/kitti/eval_road.php)。这个小数据集是由安装在车顶部的一系列传感器包括灰度传感器，彩色相机，雷达扫描仪和GPS/IMU单元拍摄而成。
 
 
 
