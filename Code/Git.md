@@ -115,6 +115,12 @@ git branch -d [branch-name]
 git remote set-head origin [branch-new]
 ```
 
+**List all tracked files**
+
+```bash
+git ls-tree -r master --name-only
+```
+
 
 
 
