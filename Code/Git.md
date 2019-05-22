@@ -121,6 +121,29 @@ git remote set-head origin [branch-new]
 git ls-tree -r master --name-only
 ```
 
+## Rebase
+
+**Git追加代码更改到之前某次commit**
+
+```bash
+git stash # 保存工作空间中的改动
+git log --oneline # 查看commit ID
+git rebase f774c^ --interactive # 找到需要修改的commit ID，将行首的pick改成edit并退出
+git stash pop # 弹出之前保存的改动
+git add . # 提交修改到暂存区
+git commit --amend # 追加修改到指定的commit ID
+git rebase --continue # 移动HEAD到最新commit处。如发生重复，应修复冲突，提交后重新运行此命令
+git push -f origin master # 强制提交更改，慎用
+```
+
+**Git调整commit之间的顺序**
+
+```bash
+git log --oneline # 查看commit ID
+git rebase -i b0aa963^ # 设置修改范围从该commit ID开始
+# 手动调整commit的位置，然后保存退出即可
+```
+
 
 
 

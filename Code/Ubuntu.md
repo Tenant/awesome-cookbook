@@ -26,6 +26,19 @@ rm -rf ~/.local/share/Trash/*
 
 
 
+**Calculate md5**
+
+```bash
+certutil -hashfile filename MD5 # windows
+md5sum filename # ubuntu
+```
+
+**Summarize disk usage of each FILE recursively**
+
+```bash
+du -hs /path/to/directory # ubuntu
+```
+
 ## Media
 
 **Converting batches images into video**
@@ -33,3 +46,31 @@ rm -rf ~/.local/share/Trash/*
 ```bash
 ffmpeg -framerate 25 -i C%06d.jpg -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4
 ```
+
+
+
+## Networks
+
+**Set SSH password login**
+
+
+
+Set password for user
+
+```bash
+sudo passwd user-name
+```
+
+Enable SSH password authentication
+
+```bash
+sudo vim /etc/ssh/sshd_config
+# set PasswordAuthentication as yes
+```
+
+Restart SSH service
+
+```bash
+sudo service sshd restart
+```
+
