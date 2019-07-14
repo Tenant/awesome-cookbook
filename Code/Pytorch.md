@@ -83,6 +83,8 @@ if args.loadmodel is not None:
 print('Number of model parameters: {}'.format(sum([p.data.nelement() for p in model.parameters()])))
 ```
 
+## Demo
+
 **Using pretrained model to evaluate Images**
 
 ```python
