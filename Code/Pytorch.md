@@ -83,6 +83,59 @@ if args.loadmodel is not None:
 print('Number of model parameters: {}'.format(sum([p.data.nelement() for p in model.parameters()])))
 ```
 
+**Using pretrained model to evaluate Images**
+
+```python
+from __future__ import print_function, division
+
+from PIL import Image, ImageDraw
+import torch
+import torch.nn as nn
+
+import torchvision
+
+import torchvision.transforms as T
+
+
+W = 800
+H = 800
+
+def get_transform():
+    transforms = []
+    transforms.append(T.Resize((W,H),2))
+    transforms.append(T.ToTensor())
+    return T.Compose(transforms)
+
+
+# Load data
+img = Image.open("data/two-persons.jpg")
+
+# Load pretrained model
+model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device_nums = torch.cuda.device_count()
+if device_nums > 1:
+    model = nn.DataParallel(model, device_ids=range(device_nums))
+model = model.to(device)
+
+# Evaluation
+model.eval()
+x = get_transform()(img)
+y = model(x.view(-1,3,W,H))
+
+print(y)
+
+# Visualization
+w, h = img.size
+w_ratio = w / W
+h_ratio = h / W
+draw = ImageDraw.Draw(img)
+for idx, (x1, y1, x2, y2) in enumerate(y[0]['boxes'].detach().numpy()):
+    if y[0]['scores'].detach().numpy()[idx] > 0.9:
+        draw.rectangle(((x1 * w_ratio, y1 * h_ratio), (x2 * w_ratio, y2 * h_ratio)), fill=None, width=2)
+img.show()
+```
+
 
 
 
