@@ -23,3 +23,19 @@ os.path.dirname(__file__)
 sys.path.append('path')
 ```
 
+## 5. Pillow
+
+**Draw Rectangle and Font on image**
+
+```python
+from PIL import Image, ImageFont, ImageDraw, ImageEnhance
+
+img = Image.open(file_name)
+
+draw = ImageDraw.Draw(img)
+draw.rectangle(((0, 0), (100, 100)), fill=None)
+draw.text((20, 70), "DYP", font=ImageFont.truetype("font_path123"))
+
+img.show()
+img.save(out_file, "JPEG")
+```
