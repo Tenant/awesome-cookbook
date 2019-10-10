@@ -36,6 +36,8 @@
 
 [fscanf格式详解](https://blog.csdn.net/q_l_s/article/details/22572777)
 
+读取已知格式的文本文件：
+
 ```c++
 FILE *fp;
 
@@ -48,3 +50,10 @@ while(true){
 fclose(fp);
 ```
 
+按照定义格式写入文本文件，每次写入前打开，写入后关闭：
+
+```c++
+FILE *fout = fopen("report.csv","a");
+fprintf(fout,"%lf,%lf,%lf\n",std::get<1>(oneEnvCar.Traj[0]),std::get<2>(oneEnvCar.Traj[0]),n_path_deviation);
+fclose(fout);
+```
