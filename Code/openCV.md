@@ -22,7 +22,7 @@ Mat dst_roi = dst(Rect(left, top, src.cols, src.rows));
 src.copyTo(dst_roi);
 ```
 
-复制透明背景图片到另一个图片
+复制透明背景图片到另一个图片：
 ```c++
 std::vector<cv::Mat> channels;
 cv::split(src_img, channels);
