@@ -22,6 +22,14 @@ Mat dst_roi = dst(Rect(left, top, src.cols, src.rows));
 src.copyTo(dst_roi);
 ```
 
+复制透明背景图片到另一个图片
+```c++
+std::vector<cv::Mat> channels;
+cv::split(src_img, channels);
+mask = channels[3];
+cv::Mat roi = dst_img(cv::Rect(center_x - src_img_width/2, center_y - src_img_height/2, src_img_width, sur_img_height));
+src_img.copyTo(roi,mask);
+```
 
 
 ### 2. Python
