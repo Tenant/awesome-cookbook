@@ -16,9 +16,14 @@
 git checkout @ -- [filename]
 ```
 
+**Untrack files but remain files in the repository**
+
+```bash
+git update-index --assume-unchanged [filename]
+```
 
 
-**Untrack files and don't change working directory**:
+**Untrack files and and remove files from the repository**:
 
 ```bash
 git rm --cached [filename]
