@@ -149,7 +149,47 @@ git rebase -i b0aa963^ # 设置修改范围从该commit ID开始
 # 手动调整commit的位置，然后保存退出即可
 ```
 
+查看指定文件的修改历史
 
+```bash
+git log -p FILE
+```
+
+搜集修改符合指定模式的历史
+
+```bash
+git log -s'PATTERN`
+```
+
+交互式的保存和取消保存变化
+
+```bash
+git add -p
+```
+
+返回指定非HEAD分支的提交记录。
+
+```bash
+git log ..BRANCH
+```
+
+返回一个简单版的git status
+
+```bash
+git status -s
+```
+
+显示你在本地已完成的操作列表
+
+```bash
+git reflog
+```
+
+显示提交记录的参与者列表。和Github的参与者列表相同。
+
+```bash
+git shortlog -sn
+```
 
 
 
