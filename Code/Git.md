@@ -191,5 +191,11 @@ git reflog
 git shortlog -sn
 ```
 
+查看指定commit的修改
+
+```bash
+git show [commit-id]
+```
+
 
 
