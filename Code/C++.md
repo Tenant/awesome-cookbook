@@ -61,3 +61,15 @@ FILE *fout = fopen("report.csv","a");
 fprintf(fout,"%lf,%lf,%lf\n",std::get<1>(oneEnvCar.Traj[0]),std::get<2>(oneEnvCar.Traj[0]),n_path_deviation);
 fclose(fout);
 ```
+### Timing
+
+```c++
+double time=getTickCount();
+
+double seconds = ( (double)getTickCount() - time)/ getTickFrequency();
+int days = int(seconds) / 60 / 60 / 24;
+int hours = (int(seconds) / 60 / 60) % 24;
+int minutes = (int(seconds) / 60) % 60;
+int seconds_left = int(seconds) % 60;
+cout << "Training until now has taken " << days << " days " << hours << " hours " << minutes << " minutes " << seconds_left <<" seconds." << endl;
+```
