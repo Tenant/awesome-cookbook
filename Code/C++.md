@@ -61,6 +61,25 @@ FILE *fout = fopen("report.csv","a");
 fprintf(fout,"%lf,%lf,%lf\n",std::get<1>(oneEnvCar.Traj[0]),std::get<2>(oneEnvCar.Traj[0]),n_path_deviation);
 fclose(fout);
 ```
+
+基于Qt创建目录
+
+```c++
+#include <QDir>
+
+QDir *qDir = new QDir;
+if (!qDir->exists("dataset")) {
+    qDir->mkdir("dataset");
+}
+
+int frameCounter = 10;
+QString path = QString("dataset/") + QString::number(frameCounter,10);
+std::printf(path.toStdString().c_str());
+if (!qDir->exists(path)) {
+    qDir->mkdir(path);
+}
+```
+
 ### Timing
 
 ```c++
