@@ -199,6 +199,6 @@ git show [commit-id]
 
 
 ### Github commit emoji
-| emoji | code | commit |
+[git -- git emoji列表（github commit 前面的小icon）-积少成多-CSDN博客](https://blog.csdn.net/wxl1555/article/details/85234184)
 
 
