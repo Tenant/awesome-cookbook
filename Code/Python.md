@@ -68,6 +68,26 @@ if __name__="__main__":
 
 ### 1. Pandas
 
+**Read CSV**
+
+```python
+import pandas as pd
+data = pd.read_csv('file_path.csv')
+print(data)
+print(data.info()) # 统计有效数据
+print(data.describe()) # 输出数值型数据的分布
+```
+
+Or you can designate the separators in this way:
+
+```python
+data = pd.read_csv('file_path.csv', sep='\s+|\t+')
+```
+
+To be explicit, the `\s` denotes `space`, `\t` denotes `tab`, `+` means multiple.
+
+
+
 ### 2. Matplotlib
 
 
